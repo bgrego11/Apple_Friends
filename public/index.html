@@ -25,7 +25,26 @@
           <input type="text" id="groupJ" placeholder="Group Name">
           <input class="btn btn-default" type="submit">
         </form>
+        <a href="/auth/facebook">Login with Facebook</a>
   </body>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1531158273642023',
+        xfbml      : true,
+        version    : 'v2.10'
+      });
+      FB.AppEvents.logPageView();
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
   <link rel="stylesheet" href="/css/style.css"> 
   <script src="/socket.io/socket.io.js"></script>
   <script src="/js/app.js"></script>
